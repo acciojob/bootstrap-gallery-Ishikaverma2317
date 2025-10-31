@@ -17,29 +17,32 @@
         background-color: #f8f9fa;
         padding: 20px;
       }
+
       h2 {
         text-align: center;
         margin-bottom: 30px;
       }
+
       .card {
         border-radius: 10px;
         overflow: hidden;
       }
+
       .card img {
         border-radius: 10px 10px 0 0;
         height: 200px;
         object-fit: cover;
         cursor: pointer;
       }
+
       .card-body {
         text-align: center;
       }
 
-      /* Simple lightbox */
+      /* Lightbox styling */
       .lightbox {
         display: none;
         position: fixed;
-        z-index: 1000;
         top: 0;
         left: 0;
         width: 100%;
@@ -47,7 +50,9 @@
         background: rgba(0, 0, 0, 0.8);
         justify-content: center;
         align-items: center;
+        z-index: 1000;
       }
+
       .lightbox img {
         max-width: 80%;
         max-height: 80%;
@@ -59,10 +64,12 @@
     <div class="container">
       <h2>Cards Gallery</h2>
       <div class="row g-4">
+        <!-- Card 1 -->
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
             <img
               src="https://storage.googleapis.com/acciojob-open-file-collections/image1.jpg"
+              class="card-img-top"
               alt="Image 1"
               onclick="openLightbox(this)"
             />
@@ -73,10 +80,12 @@
           </div>
         </div>
 
+        <!-- Card 2 -->
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
             <img
               src="https://storage.googleapis.com/acciojob-open-file-collections/image2.jpg"
+              class="card-img-top"
               alt="Image 2"
               onclick="openLightbox(this)"
             />
@@ -87,10 +96,12 @@
           </div>
         </div>
 
+        <!-- Card 3 -->
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
             <img
               src="https://storage.googleapis.com/acciojob-open-file-collections/image3.jpg"
+              class="card-img-top"
               alt="Image 3"
               onclick="openLightbox(this)"
             />
@@ -101,10 +112,12 @@
           </div>
         </div>
 
+        <!-- Card 4 -->
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
             <img
               src="https://storage.googleapis.com/acciojob-open-file-collections/image4.jpg"
+              class="card-img-top"
               alt="Image 4"
               onclick="openLightbox(this)"
             />
@@ -115,10 +128,12 @@
           </div>
         </div>
 
+        <!-- Card 5 -->
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
             <img
               src="https://storage.googleapis.com/acciojob-open-file-collections/image5.jpg"
+              class="card-img-top"
               alt="Image 5"
               onclick="openLightbox(this)"
             />
@@ -129,10 +144,12 @@
           </div>
         </div>
 
+        <!-- Card 6 -->
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
             <img
               src="https://storage.googleapis.com/acciojob-open-file-collections/image6.jpg"
+              class="card-img-top"
               alt="Image 6"
               onclick="openLightbox(this)"
             />
@@ -145,27 +162,24 @@
       </div>
     </div>
 
-    <!-- Lightbox Modal -->
+    <!-- Lightbox -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
       <img id="lightbox-img" src="" alt="Preview" />
     </div>
 
-    <!-- Bootstrap JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Inline Lightbox Script (No External Source, Avoids CORS) -->
     <script>
       function openLightbox(img) {
         document.getElementById("lightbox").style.display = "flex";
         document.getElementById("lightbox-img").src = img.src;
       }
-
       function closeLightbox() {
         document.getElementById("lightbox").style.display = "none";
       }
     </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
