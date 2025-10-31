@@ -7,9 +7,8 @@
 
     <!-- Bootstrap CSS -->
     <link
-      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      crossorigin="anonymous"
+      rel="stylesheet"
     />
 
     <style>
@@ -71,7 +70,7 @@
               src="https://storage.googleapis.com/acciojob-open-file-collections/image1.jpg"
               class="card-img-top"
               alt="Image 1"
-              onclick="openLightbox(this)"
+              onclick="openLightbox(this.src)"
             />
             <div class="card-body">
               <h6>Beautiful Landscape</h6>
@@ -87,7 +86,7 @@
               src="https://storage.googleapis.com/acciojob-open-file-collections/image2.jpg"
               class="card-img-top"
               alt="Image 2"
-              onclick="openLightbox(this)"
+              onclick="openLightbox(this.src)"
             />
             <div class="card-body">
               <h6>Peaceful Lake</h6>
@@ -103,7 +102,7 @@
               src="https://storage.googleapis.com/acciojob-open-file-collections/image3.jpg"
               class="card-img-top"
               alt="Image 3"
-              onclick="openLightbox(this)"
+              onclick="openLightbox(this.src)"
             />
             <div class="card-body">
               <h6>Mountain Escape</h6>
@@ -119,7 +118,7 @@
               src="https://storage.googleapis.com/acciojob-open-file-collections/image4.jpg"
               class="card-img-top"
               alt="Image 4"
-              onclick="openLightbox(this)"
+              onclick="openLightbox(this.src)"
             />
             <div class="card-body">
               <h6>Sunset Bliss</h6>
@@ -135,7 +134,7 @@
               src="https://storage.googleapis.com/acciojob-open-file-collections/image5.jpg"
               class="card-img-top"
               alt="Image 5"
-              onclick="openLightbox(this)"
+              onclick="openLightbox(this.src)"
             />
             <div class="card-body">
               <h6>Calm Forest</h6>
@@ -151,7 +150,7 @@
               src="https://storage.googleapis.com/acciojob-open-file-collections/image6.jpg"
               class="card-img-top"
               alt="Image 6"
-              onclick="openLightbox(this)"
+              onclick="openLightbox(this.src)"
             />
             <div class="card-body">
               <h6>City Nights</h6>
@@ -163,23 +162,22 @@
     </div>
 
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-      <img id="lightbox-img" src="" alt="Preview" />
-    </div>
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()"></div>
 
     <script>
-      function openLightbox(img) {
-        document.getElementById("lightbox").style.display = "flex";
-        document.getElementById("lightbox-img").src = img.src;
+      function openLightbox(src) {
+        const lightbox = document.getElementById("lightbox");
+        lightbox.innerHTML = `<img src="${src}" alt="Preview">`;
+        lightbox.style.display = "flex";
       }
+
       function closeLightbox() {
-        document.getElementById("lightbox").style.display = "none";
+        const lightbox = document.getElementById("lightbox");
+        lightbox.style.display = "none";
+        lightbox.innerHTML = "";
       }
     </script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
