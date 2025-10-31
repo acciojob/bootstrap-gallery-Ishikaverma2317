@@ -24,6 +24,11 @@
       .card {
         border-radius: 10px;
         overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
       }
 
       .card img {
@@ -31,10 +36,28 @@
         height: 200px;
         object-fit: cover;
         cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .card img:hover {
+        transform: scale(1.05);
       }
 
       .card-body {
         text-align: center;
+        padding: 20px;
+      }
+
+      .card-body h6 {
+        color: #2c3e50;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .card-body p {
+        color: #7f8c8d;
+        font-size: 14px;
+        line-height: 1.5;
       }
 
       .lightbox {
@@ -44,16 +67,43 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.9);
         justify-content: center;
         align-items: center;
         z-index: 1000;
       }
 
+      .lightbox-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+      }
+
       .lightbox img {
-        max-width: 80%;
-        max-height: 80%;
         border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .close-btn {
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+      }
+
+      .close-btn:hover {
+        background-color: rgba(255, 255, 255, 0.2);
       }
     </style>
   </head>
@@ -62,98 +112,139 @@
     <div class="container">
       <h2>Cards Gallery</h2>
       <div class="row g-4">
+        <!-- Card 1 -->
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
-            <img src="https://storage.googleapis.com/acciojob-open-file-collections/image1.jpg" class="card-img-top" alt="Image 1" onclick="openLightbox(this, 1)" />
+            <img 
+              src="https://storage.googleapis.com/acciojob-open-file-collections/image1.jpg" 
+              class="card-img-top" 
+              alt="Beautiful Landscape" 
+              onclick="openLightbox('https://storage.googleapis.com/acciojob-open-file-collections/image1.jpg', 'Beautiful Landscape')" 
+            />
             <div class="card-body">
               <h6>Beautiful Landscape</h6>
-              <p>Enjoy the serene view of nature’s beauty.</p>
+              <p>Enjoy the serene view of nature's beauty.</p>
             </div>
-          </div>
-          <div class="lightbox" id="lightbox1" onclick="closeLightbox(1)">
-            <img src="" alt="Preview" />
           </div>
         </div>
 
+        <!-- Card 2 -->
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
-            <img src="https://storage.googleapis.com/acciojob-open-file-collections/image2.jpg" class="card-img-top" alt="Image 2" onclick="openLightbox(this, 2)" />
+            <img 
+              src="https://storage.googleapis.com/acciojob-open-file-collections/image2.jpg" 
+              class="card-img-top" 
+              alt="Peaceful Lake" 
+              onclick="openLightbox('https://storage.googleapis.com/acciojob-open-file-collections/image2.jpg', 'Peaceful Lake')" 
+            />
             <div class="card-body">
               <h6>Peaceful Lake</h6>
               <p>A calm lake surrounded by lush greenery.</p>
             </div>
           </div>
-          <div class="lightbox" id="lightbox2" onclick="closeLightbox(2)">
-            <img src="" alt="Preview" />
-          </div>
         </div>
 
+        <!-- Card 3 -->
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
-            <img src="https://storage.googleapis.com/acciojob-open-file-collections/image3.jpg" class="card-img-top" alt="Image 3" onclick="openLightbox(this, 3)" />
+            <img 
+              src="https://storage.googleapis.com/acciojob-open-file-collections/image3.jpg" 
+              class="card-img-top" 
+              alt="Mountain Escape" 
+              onclick="openLightbox('https://storage.googleapis.com/acciojob-open-file-collections/image3.jpg', 'Mountain Escape')" 
+            />
             <div class="card-body">
               <h6>Mountain Escape</h6>
               <p>Feel the fresh mountain air and tranquility.</p>
             </div>
           </div>
-          <div class="lightbox" id="lightbox3" onclick="closeLightbox(3)">
-            <img src="" alt="Preview" />
-          </div>
         </div>
 
+        <!-- Card 4 -->
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
-            <img src="https://storage.googleapis.com/acciojob-open-file-collections/image4.jpg" class="card-img-top" alt="Image 4" onclick="openLightbox(this, 4)" />
+            <img 
+              src="https://storage.googleapis.com/acciojob-open-file-collections/image4.jpg" 
+              class="card-img-top" 
+              alt="Sunset Bliss" 
+              onclick="openLightbox('https://storage.googleapis.com/acciojob-open-file-collections/image4.jpg', 'Sunset Bliss')" 
+            />
             <div class="card-body">
               <h6>Sunset Bliss</h6>
               <p>Witness the beautiful sunset hues.</p>
             </div>
           </div>
-          <div class="lightbox" id="lightbox4" onclick="closeLightbox(4)">
-            <img src="" alt="Preview" />
-          </div>
         </div>
 
+        <!-- Card 5 -->
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
-            <img src="https://storage.googleapis.com/acciojob-open-file-collections/image5.jpg" class="card-img-top" alt="Image 5" onclick="openLightbox(this, 5)" />
+            <img 
+              src="https://storage.googleapis.com/acciojob-open-file-collections/image5.jpg" 
+              class="card-img-top" 
+              alt="Calm Forest" 
+              onclick="openLightbox('https://storage.googleapis.com/acciojob-open-file-collections/image5.jpg', 'Calm Forest')" 
+            />
             <div class="card-body">
               <h6>Calm Forest</h6>
               <p>Take a peaceful walk in the woods.</p>
             </div>
           </div>
-          <div class="lightbox" id="lightbox5" onclick="closeLightbox(5)">
-            <img src="" alt="Preview" />
-          </div>
         </div>
 
+        <!-- Card 6 -->
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
-            <img src="https://storage.googleapis.com/acciojob-open-file-collections/image6.jpg" class="card-img-top" alt="Image 6" onclick="openLightbox(this, 6)" />
+            <img 
+              src="https://storage.googleapis.com/acciojob-open-file-collections/image6.jpg" 
+              class="card-img-top" 
+              alt="City Nights" 
+              onclick="openLightbox('https://storage.googleapis.com/acciojob-open-file-collections/image6.jpg', 'City Nights')" 
+            />
             <div class="card-body">
               <h6>City Nights</h6>
               <p>The vibrant city life illuminated by lights.</p>
             </div>
           </div>
-          <div class="lightbox" id="lightbox6" onclick="closeLightbox(6)">
-            <img src="" alt="Preview" />
-          </div>
         </div>
       </div>
     </div>
 
+    <!-- Single Lightbox for all images -->
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-content">
+        <button class="close-btn" onclick="closeLightbox()">×</button>
+        <img id="lightbox-img" src="" alt="" />
+      </div>
+    </div>
+
     <script>
-      function openLightbox(img, id) {
-        const lightbox = document.getElementById("lightbox" + id);
-        const lightboxImg = lightbox.querySelector("img");
-        lightboxImg.src = img.src;
+      function openLightbox(src, alt) {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
         lightbox.style.display = "flex";
       }
 
-      function closeLightbox(id) {
-        const lightbox = document.getElementById("lightbox" + id);
+      function closeLightbox() {
+        const lightbox = document.getElementById("lightbox");
         lightbox.style.display = "none";
       }
+
+      // Close lightbox when clicking outside the image
+      document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeLightbox();
+        }
+      });
+
+      // Close lightbox with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeLightbox();
+        }
+      });
     </script>
   </body>
 </html>
