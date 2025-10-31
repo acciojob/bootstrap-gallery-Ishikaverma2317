@@ -64,111 +64,95 @@
       <div class="row g-4">
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
-            <img
-              src="https://storage.googleapis.com/acciojob-open-file-collections/image1.jpg"
-              class="card-img-top"
-              alt="Image 1"
-              onclick="openLightbox(this)"
-            />
+            <img src="https://storage.googleapis.com/acciojob-open-file-collections/image1.jpg" class="card-img-top" alt="Image 1" onclick="openLightbox(this, 1)" />
             <div class="card-body">
               <h6>Beautiful Landscape</h6>
               <p>Enjoy the serene view of nature’s beauty.</p>
             </div>
           </div>
+          <div class="lightbox" id="lightbox1" onclick="closeLightbox(1)">
+            <img src="" alt="Preview" />
+          </div>
         </div>
 
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
-            <img
-              src="https://storage.googleapis.com/acciojob-open-file-collections/image2.jpg"
-              class="card-img-top"
-              alt="Image 2"
-              onclick="openLightbox(this)"
-            />
+            <img src="https://storage.googleapis.com/acciojob-open-file-collections/image2.jpg" class="card-img-top" alt="Image 2" onclick="openLightbox(this, 2)" />
             <div class="card-body">
               <h6>Peaceful Lake</h6>
               <p>A calm lake surrounded by lush greenery.</p>
             </div>
           </div>
+          <div class="lightbox" id="lightbox2" onclick="closeLightbox(2)">
+            <img src="" alt="Preview" />
+          </div>
         </div>
 
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
-            <img
-              src="https://storage.googleapis.com/acciojob-open-file-collections/image3.jpg"
-              class="card-img-top"
-              alt="Image 3"
-              onclick="openLightbox(this)"
-            />
+            <img src="https://storage.googleapis.com/acciojob-open-file-collections/image3.jpg" class="card-img-top" alt="Image 3" onclick="openLightbox(this, 3)" />
             <div class="card-body">
               <h6>Mountain Escape</h6>
               <p>Feel the fresh mountain air and tranquility.</p>
             </div>
           </div>
+          <div class="lightbox" id="lightbox3" onclick="closeLightbox(3)">
+            <img src="" alt="Preview" />
+          </div>
         </div>
 
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
-            <img
-              src="https://storage.googleapis.com/acciojob-open-file-collections/image4.jpg"
-              class="card-img-top"
-              alt="Image 4"
-              onclick="openLightbox(this)"
-            />
+            <img src="https://storage.googleapis.com/acciojob-open-file-collections/image4.jpg" class="card-img-top" alt="Image 4" onclick="openLightbox(this, 4)" />
             <div class="card-body">
               <h6>Sunset Bliss</h6>
               <p>Witness the beautiful sunset hues.</p>
             </div>
           </div>
+          <div class="lightbox" id="lightbox4" onclick="closeLightbox(4)">
+            <img src="" alt="Preview" />
+          </div>
         </div>
 
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
-            <img
-              src="https://storage.googleapis.com/acciojob-open-file-collections/image5.jpg"
-              class="card-img-top"
-              alt="Image 5"
-              onclick="openLightbox(this)"
-            />
+            <img src="https://storage.googleapis.com/acciojob-open-file-collections/image5.jpg" class="card-img-top" alt="Image 5" onclick="openLightbox(this, 5)" />
             <div class="card-body">
               <h6>Calm Forest</h6>
               <p>Take a peaceful walk in the woods.</p>
             </div>
           </div>
+          <div class="lightbox" id="lightbox5" onclick="closeLightbox(5)">
+            <img src="" alt="Preview" />
+          </div>
         </div>
 
         <div class="col-md-4 col-sm-6">
           <div class="card shadow-sm">
-            <img
-              src="https://storage.googleapis.com/acciojob-open-file-collections/image6.jpg"
-              class="card-img-top"
-              alt="Image 6"
-              onclick="openLightbox(this)"
-            />
+            <img src="https://storage.googleapis.com/acciojob-open-file-collections/image6.jpg" class="card-img-top" alt="Image 6" onclick="openLightbox(this, 6)" />
             <div class="card-body">
               <h6>City Nights</h6>
               <p>The vibrant city life illuminated by lights.</p>
             </div>
           </div>
+          <div class="lightbox" id="lightbox6" onclick="closeLightbox(6)">
+            <img src="" alt="Preview" />
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- ✅ Only ONE shared lightbox -->
-    <div class="lightbox" onclick="closeLightbox()">
-      <img src="" alt="Preview" />
-    </div>
-
     <script>
-      function openLightbox(img) {
-        const lightbox = document.querySelector(".lightbox");
+      function openLightbox(img, id) {
+        const lightbox = document.getElementById("lightbox" + id);
         const lightboxImg = lightbox.querySelector("img");
         lightboxImg.src = img.src;
         lightbox.style.display = "flex";
       }
 
-      function closeLightbox() {
-        document.querySelector(".lightbox").style.display = "none";
+      function closeLightbox(id) {
+        const lightbox = document.getElementById("lightbox" + id);
+        lightbox.style.display = "none";
       }
     </script>
   </body>
